@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 64" width="200" height="64">
+  <!-- Hoja izquierda -->
+  <path d="M32 60c15.464-4.256 27-16.79 27-32 0-2.21-.28-4.378-.82-6.48l-23.18 23.18L32 60z" fill="#047857"/>
+  <!-- Hoja derecha -->
+  <path d="M32 60c-15.464-4.256-27-16.79-27-32 0-2.21.28-4.378.82-6.48l23.18 23.18L32 60z" fill="#047857"/>
+  <!-- Semilla central -->
+  <circle cx="32" cy="32" r="6" fill="#10B981"/>
+  <!-- Texto "AgroAliada" -->
+  <text x="72" y="42" font-family="sans-serif" font-size="24" font-weight="bold" fill="#047857">AgroAliada</text>
+</svg>
