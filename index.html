@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AgroAliada</title>
-  <link rel="icon" href="agroaliada_logo.svg" type="image/png">
+  <!-- Favicon SVG: ajustamos el type -->
+  <link rel="icon" href="agroaliada_logo.svg" type="image/svg+xml">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -13,10 +14,17 @@
   <!-- Header -->
   <header class="bg-white shadow p-4 flex items-center justify-between">
     <button onclick="toggleSidebar()" class="text-2xl focus:outline-none">☰</button>
-    <h1 class="text-2xl font-bold text-green-700">AgroAliada</h1>
+    <h1 class="flex items-center space-x-2">
+      <!-- Corregimos aquí -->
+      <img src="agroaliada_logo.svg" alt="Logo AgroAliada" class="h-8 w-auto"/>
+      <span class="text-2xl font-bold text-green-700">AgroAliada</span>
+    </h1>
     <div class="flex items-center space-x-2">
-      <input id="searchInput" type="text" placeholder="Buscar cultivo" class="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none"/>
-      <button onclick="toggleChat()" class="bg-green-500 text-white px-3 py-1 rounded">ChatBot</button>
+      <input id="searchInput" type="text" placeholder="Buscar cultivo"
+             class="border border-gray-300 rounded px-2 py-1 text-sm focus:outline-none"/>
+      <button onclick="toggleChat()" class="bg-green-500 text-white px-3 py-1 rounded">
+        ChatBot
+      </button>
     </div>
   </header>
 
@@ -26,10 +34,11 @@
   </main>
 
   <!-- Sidebar filtros -->
-  <aside id="sidebar" class="fixed inset-y-0 left-0 w-80 bg-white p-4 shadow-lg transform -translate-x-full transition-transform">
+  <aside id="sidebar"
+         class="fixed inset-y-0 left-0 w-80 bg-white p-4 shadow-lg transform -translate-x-full transition-transform">
     <button onclick="toggleSidebar()" class="text-2xl mb-4">×</button>
     <h2 class="text-xl font-bold mb-2">Filtros</h2>
-
+    <!-- Riego -->
     <label class="block mb-2">
       <span class="font-medium">Riego</span>
       <select id="filterWater" class="w-full border-gray-300 rounded mt-1">
@@ -39,7 +48,7 @@
         <option>Quincenal</option>
       </select>
     </label>
-
+    <!-- Luz -->
     <label class="block mb-2">
       <span class="font-medium">Luz</span>
       <select id="filterLight" class="w-full border-gray-300 rounded mt-1">
@@ -49,15 +58,17 @@
         <option>Sombra</option>
       </select>
     </label>
-
+    <!-- Cosecha -->
     <label class="block mb-4">
       <span class="font-medium">Cosecha (meses)</span>
       <div class="flex space-x-2 mt-1">
-        <input id="filterDurationMin" type="number" min="1" max="24" placeholder="Min" class="w-1/2 border-gray-300 rounded px-2 py-1"/>
-        <input id="filterDurationMax" type="number" min="1" max="24" placeholder="Max" class="w-1/2 border-gray-300 rounded px-2 py-1"/>
+        <input id="filterDurationMin" type="number" min="1" max="24" placeholder="Min"
+               class="w-1/2 border-gray-300 rounded px-2 py-1"/>
+        <input id="filterDurationMax" type="number" min="1" max="24" placeholder="Max"
+               class="w-1/2 border-gray-300 rounded px-2 py-1"/>
       </div>
     </label>
-
+    <!-- Región -->
     <label class="block mb-4">
       <span class="font-medium">Región</span>
       <select id="filterRegion" class="w-full border-gray-300 rounded mt-1">
@@ -81,8 +92,10 @@
         <option>Atlántico</option>
       </select>
     </label>
-
-    <button id="applyFilters" onclick="applyFilters()" class="w-full bg-green-600 text-white py-2 rounded">Aplicar</button>
+    <button id="applyFilters" onclick="applyFilters()"
+            class="w-full bg-green-600 text-white py-2 rounded">
+      Aplicar
+    </button>
   </aside>
 
   <!-- Modal detalle -->
@@ -94,16 +107,20 @@
   </div>
 
   <!-- ChatBot widget -->
-  <div id="chatWidget" class="fixed bottom-4 right-4 w-80 h-auto bg-white shadow-lg rounded-lg hidden flex flex-col">
+  <div id="chatWidget"
+       class="fixed bottom-4 right-4 w-80 h-auto bg-white shadow-lg rounded-lg hidden flex flex-col">
     <div class="bg-green-600 text-white px-4 py-2 flex justify-between items-center">
       <span>AgroChat</span>
       <button onclick="toggleChat()">×</button>
     </div>
     <div id="chatContent" class="flex-1 p-2 overflow-y-auto text-sm max-h-64"></div>
     <div class="p-2 border-t space-y-2">
-      <input id="chatInput" type="text" placeholder="Escribe tu pregunta..." class="w-full border border-gray-300 rounded px-2 py-1"/>
-      <input id="chatFileInput" type="file" accept="image/*,.pdf,.doc,.docx" multiple class="w-full" />
-      <button onclick="sendChat()" class="mt-1 w-full bg-green-500 text-white py-1 rounded">Enviar</button>
+      <input id="chatInput" type="text" placeholder="Escribe tu pregunta..."
+             class="w-full border border-gray-300 rounded px-2 py-1"/>
+      <input id="chatFileInput" type="file" accept="image/*,.pdf,.doc,.docx" multiple class="w-full"/>
+      <button onclick="sendChat()" class="mt-1 w-full bg-green-500 text-white py-1 rounded">
+        Enviar
+      </button>
     </div>
   </div>
 
